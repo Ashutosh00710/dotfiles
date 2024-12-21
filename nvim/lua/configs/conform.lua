@@ -13,9 +13,6 @@ local options = {
     graphql = { "prettier" },
     lua = { "stylua" },
   },
-  formatters = {
-    ["goimports-reviser"] = { prepend_args = { "-rm-unused", "-format" } },
-  },
   format_on_save = {
     lsp_format = "fallback",
     timeout_ms = 1500,
