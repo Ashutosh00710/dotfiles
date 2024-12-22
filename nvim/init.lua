@@ -53,7 +53,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 local nmap = function(keys, func, desc)
   vim.keymap.set("n", keys, func, { desc = desc })
 end
-nmap("<C-i>", vim.diagnostic.open_float, "hover diagnostics")
+nmap("<leader>i", vim.diagnostic.open_float, "hover diagnostics")
 
 vim.lsp.inlay_hint.enable(true)
 
