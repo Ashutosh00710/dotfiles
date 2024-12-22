@@ -65,8 +65,4 @@ vim.opt.softtabstop = 4 -- Number of spaces in tab when editing
 vim.opt.relativenumber = true
 
 local nvim_tree = require "nvim-tree"
-nvim_tree.setup {
-  view = {
-    side = "right",
-  },
-}
+nvim_tree.setup(require "configs.nvimtree")
