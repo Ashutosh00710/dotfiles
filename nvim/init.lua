@@ -63,3 +63,10 @@ vim.opt.tabstop = 4 -- Number of spaces tabs count for
 vim.opt.shiftwidth = 4 -- Size of an indent
 vim.opt.softtabstop = 4 -- Number of spaces in tab when editing
 vim.opt.relativenumber = true
+
+local nvim_tree = require "nvim-tree"
+nvim_tree.setup {
+  view = {
+    side = "right",
+  },
+}
