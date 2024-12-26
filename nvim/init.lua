@@ -66,3 +66,7 @@ vim.opt.relativenumber = true
 
 local nvim_tree = require "nvim-tree"
 nvim_tree.setup(require "configs.nvimtree")
+
+-- Delete without copying to clipboard
+vim.keymap.set("n", "dc", '"_dd', { noremap = true })
+vim.keymap.set("v", "dc", '"_d', { noremap = true })
