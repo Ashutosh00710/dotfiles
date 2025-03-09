@@ -1,0 +1,4 @@
+# App shortcuts
+alt - c : open -a 'Ghostty'
+alt - b : open -a 'Brave Browser'
+alt - s : open -a 'Slack'

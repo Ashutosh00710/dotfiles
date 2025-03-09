@@ -36,6 +36,7 @@ end)
 
 vim.keymap.set("n", "<leader>dt", require("dap").toggle_breakpoint, { desc = "[D]ebug [T]oggle breakpoint" })
 vim.keymap.set("n", "<leader>dc", require("dap").continue, { desc = "[D]ebug [C]ontinue" })
+vim.keymap.set("n", "sd", "<cmd>vsp<CR><cmd>lua vim.lsp.buf.definition()<CR>zz", { noremap = true, silent = true })
 vim.fn.sign_define(
   "DapBreakpoint",
   { text = "⏺", texthl = "DapBreakpoint", linehl = "DapBreakpoint", numhl = "DapBreakpoint" }
@@ -70,3 +71,26 @@ nvim_tree.setup(require "configs.nvimtree")
 -- Delete without copying to clipboard
 vim.keymap.set("n", "dc", '"_dd', { noremap = true })
 vim.keymap.set("v", "dc", '"_d', { noremap = true })
+
+require("noice").setup(require "configs.noicenvim")
+
+if vim.g.neovide then
+  vim.o.guifont = "FiraCode Nerd Font:h16"
+  require("FTerm").setup {
+    border = "single",
+    dimensions = {
+      height = 0.99,
+      width = 0.95,
+    },
+    cmd = "sh -c 'tmux new -As scratch'",
+    blend = 10,
+  }
+  vim.keymap.set("n", "<C-\\>", require("FTerm").toggle, { noremap = true, silent = true })
+  vim.keymap.set("i", "<C-\\>", require("FTerm").toggle, { noremap = true, silent = true })
+  vim.keymap.set("t", "<C-\\>", require("FTerm").toggle, { noremap = true, silent = true })
+
+  vim.g.neovide_padding_top = 3
+  vim.g.neovide_padding_bottom = 3
+  vim.g.neovide_padding_right = 3
+  vim.g.neovide_padding_left = 3
+end

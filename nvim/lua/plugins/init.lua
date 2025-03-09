@@ -11,6 +11,18 @@ return {
     end,
   },
   {
+    "numToStr/FTerm.nvim",
+    config = true,
+  },
+  {
+    "folke/noice.nvim",
+    event = "VeryLazy",
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+      "rcarriga/nvim-notify",
+    },
+  },
+  {
     "nvim-treesitter/nvim-treesitter",
     opts = {
       ensure_installed = {
@@ -25,7 +37,10 @@ return {
         "typescript",
         "vimdoc",
         "vim",
+        "yaml",
         "bash",
+        "terraform",
+        "zig",
       },
     },
   },
